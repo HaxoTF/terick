@@ -1,0 +1,192 @@
+Terick v2.0 -- ( name meaning : [Te]xt T[rick] )
+Made by : @HaxoTF
+Last update : 16/04/2023
+
+
+----====[ Text Tricks ]====----
+
+bar          | Returns whole string of characters that visualizes bar
+             | 
+             | Example:
+             | - Input  : 50, 10, "#_"
+             | - Output : "#####_____"
+
+
+
+unlist_words | Reverse function of .split()
+             |
+             | Example:
+             | - Input  : ["Hello", "World"]
+             | - Output : "Hello World"
+
+
+
+list_lines   | some kind of open(path, "r").readlines() but works on string
+             | 
+             | Example:
+             | - Input  : "Hello\nWorld"
+             | - Output : ["Hello", "World"]
+
+
+vanish_char  | returns string without characters given as argument
+             | 
+             | Example:
+             | - Input  : "Hello_World!", "_!"
+             | - Output : "HelloWorld"
+
+
+
+interize     | returns int from string including numbers but also non-int characters
+             | if doesn't include numbers returns None
+             | 
+             | Example:
+             | - Input  : "/=123+"
+             | - Output : 123
+
+
+toggle       | toggles bool variable
+             |
+             | Example:
+             | - Input  : True
+             | - Output : False
+
+
+short_num    | shorts number as string
+             |
+             | Example:
+             | - Input  : 20000
+             | - Output : "20K"
+
+
+
+limit_str    | limits string lenght
+             |
+             | Example:
+             | - Input  : "Hello World", 4
+             | - Output : "Hell"
+
+
+
+text_align   | Places text in right Place.
+             | takes 3 possible arguments as align
+             | "center"(default), "left" or "l", "right" or "r"
+             |
+             | Example:
+             | - Input  : "Hello", 9, "center"
+             | - Output : "  Hello  "
+
+
+----====[ Numbers ]====----
+
+
+limit        | keeps number in max or min given value
+             |
+             | Example:
+             | - Input  : 15, 3, 10
+             | - Output : 10
+
+
+----====[ Files ]====----
+
+
+new_file     | Fast create new File
+
+load         | Fast open file in text read mode
+             | Can take 3 possible arguments as mode
+             |
+             | Example file content : "Hello \nWorld"
+             |
+             | "normal" or "n":
+             | - returns file as open().readlines()
+             |
+             | - Example output: 
+             | -    ["Hello \n", "World"]
+             |
+             | "text" or "t":
+             | - returns whole file as one string instead of list of lines
+             |
+             | - Example output:
+             | -    "Hello \nWorld"
+             |
+             | "database" or "d":
+             | - returns file content in database format
+             | - takes SPACE character as separator
+             | - can be used also as word spliter in files
+             |
+             | - Example:
+             | -    File Content : "Jake 16 M\nEmily 17 F\nMike 20 M"
+             | -    Output       :
+             | -        [["Jake", "16", "M"],
+             | -        ["Emily", "17", "F"],
+             | -        ["Mike", "20", "M"]]s
+
+
+save         | Works the same as load(), but saves files
+             | data argument is file content
+
+
+zipdir       | Saves whole directory into zip file
+
+
+unzip        | reverse function of zip_dir
+
+
+----====[ Math ]====----
+
+
+calc_avg     | takes list of numbers and returns average
+             | 
+             | Example:
+             | - Input  : [10, 20]
+             | - Output : 15
+
+
+get_max      | takes list of numbers and returns greatest number
+             |
+             | Example:
+             | - Input  : [20, 100, 15, 30, 5]
+             | - Output : 100
+
+
+get_min      | takes list of numbers and returns lowest number
+             |
+             | Example:
+             | - Input  : [20, 100, 15, 30, 5]
+             | - Output : 5
+
+----====[ Classes ]====----
+
+
+Timer        | Counts time elapsed between start() and stop() functions
+             | 
+             | General use:
+             | - get_delay() - returns delay, works still while running
+             | - start() - starts timer if not running
+             | - stops() - stops timer if running
+             | - toggle() - toggles enabled/disabled timer
+             | - is_running() - returns is timer running
+
+
+
+Defu         | Delays repeatable function in loop -- ( name meaning: [De]lay [Fu]nctions )
+             | Not recommended for one-use functions
+             | 
+             | General use:
+             | - start() - enable function (set by default)
+             | - stop() - disable function
+             | - set_delay() - update delay of function
+             |
+             | Use in loop:
+             | - work() - run function repeatly in delay given
+
+
+
+Fps          | Tool for fps
+             | fps= -1 stands for unlimited framerate
+             | 
+             | Use before loop:
+             | - target_fps() - to set fps limit
+	         |
+             | Use in loop:
+             | - limit() - limits framerate
+             | - update() - to update info about delay elapsed between frames
